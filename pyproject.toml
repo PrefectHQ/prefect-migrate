@@ -3,7 +3,7 @@ name = "prefect-migrate"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 dependencies = ["prefect>=3.3.6", "typer>=0.15.2"]
 scripts = { prefect-migrate = "prefect_migrate.cli.app:app" }
 
