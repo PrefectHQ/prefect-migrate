@@ -1,6 +1,5 @@
 from datetime import timedelta
 from typing import TYPE_CHECKING
-from uuid import uuid4
 from prefect.events.schemas.automations import AutomationCore, EventTrigger, Posture
 from prefect.events.schemas.events import ResourceSpecification
 from prefect.events.actions import SendNotification
