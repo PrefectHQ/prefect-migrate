@@ -1,7 +1,7 @@
 from datetime import timedelta
 import textwrap
 from uuid import uuid4
-from prefect.events.schemas.automations import Automation, Posture, EventTrigger
+from prefect.events.schemas.automations import AutomationCore, Posture, EventTrigger
 from prefect.events.actions import SendNotification
 from prefect.events.schemas.events import ResourceSpecification
 from prefect.client.schemas.objects import FlowRunNotificationPolicy
@@ -24,7 +24,7 @@ def test_basic_conversion():
 
     automation = convert_flow_run_notification_policy_to_automation(policy)
 
-    assert isinstance(automation, Automation)
+    assert isinstance(automation, AutomationCore)
     assert automation.name == "Flow Run State Change Notification"
     assert automation.enabled is True
     assert len(automation.actions) == 1
@@ -162,5 +162,5 @@ def test_inactive_policy():
 
     automation = convert_flow_run_notification_policy_to_automation(policy)
 
-    assert isinstance(automation, Automation)
+    assert isinstance(automation, AutomationCore)
     assert automation.enabled is False

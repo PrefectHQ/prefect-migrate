@@ -1,7 +1,6 @@
 from datetime import timedelta
 from typing import TYPE_CHECKING
-from uuid import uuid4
-from prefect.events.schemas.automations import Automation, EventTrigger, Posture
+from prefect.events.schemas.automations import AutomationCore, EventTrigger, Posture
 from prefect.events.schemas.events import ResourceSpecification
 from prefect.events.actions import SendNotification
 
@@ -38,9 +37,8 @@ PLACEHOLDER_MAP = {
 
 def convert_flow_run_notification_policy_to_automation(
     policy: "FlowRunNotificationPolicy",
-) -> Automation:
-    return Automation(
-        id=uuid4(),
+) -> AutomationCore:
+    return AutomationCore(
         name="Flow Run State Change Notification",
         description="Migrated from a flow run notification policy using prefect-migrate",
         enabled=policy.is_active,
