@@ -53,7 +53,7 @@ async def _migrate():
                 await client.create_automation(automation)
 
             console.print(
-                "Migration complete. Once you've verified the created automations, you can delete the old policies with `prefect-migration flow-run-notification-policies clear"
+                "Migration complete. Once you've verified the created automations, you can delete the old policies with `prefect-migration flow-run-notification-policies clear`"
             )
         else:
             console.print("Migration cancelled.")
