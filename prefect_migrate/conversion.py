@@ -40,7 +40,6 @@ def convert_flow_run_notification_policy_to_automation(
     policy: "FlowRunNotificationPolicy",
 ) -> AutomationCore:
     return AutomationCore(
-        id=uuid4(),
         name="Flow Run State Change Notification",
         description="Migrated from a flow run notification policy using prefect-migrate",
         enabled=policy.is_active,
